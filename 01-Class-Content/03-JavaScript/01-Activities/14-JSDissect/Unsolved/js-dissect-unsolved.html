@@ -1,50 +1,47 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <title>
-      Data Types, User Input, Conditional Logic
+      Data Types, User Input, Conditional Logic - Uncommented
     </title>
   </head>
   <body>
-    <!-- this is a comment in HTML -->
     <script type="text/javascript">
-      // this is a comment in javascript
-      // you have 8 mins, you need to write EVERYTHING you think these lines below are doing.
-      // HEY ANTONIO! What is control Flow?
-      // the prompt keyword here is a FUNCTION and parenthesis next to it means I am INVOKING or CALLING
+
       var userName = prompt("What's your name?");
-      // YOU MUST use var,let,const to establish or initiate a variable.
-      // The equal sign (=) is the ASSIGNMENT operator
       var confirmCats = confirm("Do you like cats?");
 
-      var petName = "Meeses"; //String
-      var petType = "Tuxedo Cat"; //String
-      var petAge = 5; //Number
-      var petIsCat = true; //what is the datatype? Boolean (stores true or false | 0 or 1)
-      // IF confirmCats IS a TRUTHY value THEN enter the block of code ELSE do the other block of code
+      var petName = "Meeses";
+      var petType = "Tuxedo Cat";
+      var petAge = 5;
+      var petIsCat = true;
 
       if (confirmCats) {
         alert(petName + " " + petType + " " + petAge);
-      } else {
+      }
+      else {
         alert("You don't get my cat's information");
       }
 
       if (petIsCat) {
         alert("My pet is a cat");
-      } else {
+      }
+      else {
         alert("My pet is not a cat");
       }
-      // BANG means NOT or give me the opposite
+
       if (petAge !== 7) {
         alert("My pet is not 7 years old");
       }
 
       if (petAge === 5) {
         alert("My pet is 5 years old");
-      } else if (petAge < 5) {
+      }
+      else if (petAge < 5) {
         alert("My pet is less than 5 years old");
-      } else if (petAge > 5) {
+      }
+      else {
         alert("My pet is older than 5 years old");
       }
 
@@ -57,6 +54,7 @@
 
       // Works as expected
       alert(parseInt(catAge) + 2);
+
     </script>
   </body>
 </html>

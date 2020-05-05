@@ -1,14 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>This Window</title>
-</head>
-<body>
-  <h2>Open the console to see the magic!</h2>
-  
-  <script>console.log(this);</script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>This Window</title>
+  </head>
+  <body>
+    <h2>Open the console to see the magic!</h2>
+
+    <script>
+      // To understand the THIS keyword you must understand CONTEXT
+
+      console.log(this); // at THIS moment this = window
+      var antonio = this;
+      // IIFE - Immediately Invoked Function Expression
+      // Don't do this! You shouldn't be chaining IFFEs
+      (function whatEverYouWant() {
+        console.log("Just checking if you work");
+        console.log("This inside the whatever you want", this);
+        (function ButYouToldMe() {
+          console.log("You can get with THIS or you can get with that", this);
+          (function AreYouTryingToMakeFetchWork() {
+            console.log("Fetch is cool, but what about ajax?", this);
+          })();
+        })();
+      })();
+
+      function Food(kind) {
+        this.kind = kind;
+        this.cook = cook;
+        function cook(sec) {
+          console.log("At THIS moment this:", this);
+          setTimeout(() => {
+            console.log(this.kind + " cooked for " + sec + " seconds.");
+          }, sec * 1000);
+        }
+      }
+      let soup = new Food("Ramen Tatsuya");
+      soup.cook(2); // soup cooked for 2 seconds.
+    </script>
+  </body>
 </html>

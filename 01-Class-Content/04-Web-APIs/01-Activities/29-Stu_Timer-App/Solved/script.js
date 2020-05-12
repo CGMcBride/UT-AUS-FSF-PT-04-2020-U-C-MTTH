@@ -13,12 +13,19 @@ var secondsElapsed = 0;
 var status = "Working";
 var interval;
 
+[
+  {
+    id: 1,
+    question: "whos ya favorite hero",
+    answer: "deadpool",
+    options: ["deadpool", " batman"],
+  },
+];
 /* One thing to distinguish here is that not all functions are created equal.
    Some functions just change settings, some functions just call other functions,
    some functions just format strings or numbers, etc. */
 
 //this launches the app by calling setTime() and renderTime()
-getTimePreferences();
 
 //These two functions are just for making sure the numbers look nice for the html elements
 function getFormattedMinutes() {
@@ -101,6 +108,12 @@ function startTimer() {
       //So renderTime() is called here once every second.
       renderTime();
     }, 1000);
+
+    if (wrong) {
+      secondsElapsed = secondsElapsed - 30;
+    } else {
+      moveOn();
+    }
   } else {
     alert("Minutes of work/rest must be greater than 0.");
   }

@@ -25,7 +25,41 @@
     // This code makes sure that the JavaScript doesn't get run until the HTML is finished loading
     // It's useful to become familiar with now.
 
-    $(document).ready(function() {
+    $(document).ready(function () {
+
+      $("#grilledcheese").on("click", function () {
+        alert("Does this show up?");
+      });
+      $(<h3>).on("click", "#click-me", function () {
+        alert("It should show up again!");
+      });
+      $("#pbj").on("click", function () {
+          alert("Nom nom nom");
+      });
+      $(document).on("click", "#click-me", function () {
+          alert("It's pbj Time, there they go!");
+      });
+      $("#roastbeef").on("click", function () {
+          alert("whomp whomp whomp!");
+      });
+      $(document).on("click", "#click-me", function () {
+          alert("I've been clicked!");
+      });
+      Collapse
+
+
+
+
+      Collapse
+
+
+
+
+      Collapse
+
+
+
+
 
       // VARIABLES
       // ====================================================================
@@ -46,7 +80,7 @@
 
     });
 
-</script>
+  </script>
 
 </body>
 

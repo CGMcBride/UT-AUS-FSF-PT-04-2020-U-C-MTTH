@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>JavaScript Content!</title>
 </head>
+
 <body>
 
   <h1>Drink Selection!</h1>
@@ -27,9 +29,13 @@
 
     // Using JavaScript programmatically append each drinkList item to the "drink-options" div
     // HINT: you will need a for loop to go over each element in the list
+    var $ = ("#drink-options").html("<h1> Drink Selection</h1>");
 
+    var newDiv = $("<div>");
+    newDiv.text("drink list")
 
   </script>
 
 </body>
+
 </html>

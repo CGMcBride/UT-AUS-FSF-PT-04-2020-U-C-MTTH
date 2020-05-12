@@ -60,10 +60,14 @@
         </div>
 
         <script type="text/javascript">
-          $(document).ready(function() {
+          $(document).ready(function () {
+
+            $("#computer-pick").append
 
             // Here we create the on click event that gets the user's pick
-            $(".btn-choice").on("click", function() {
+            $(".btn-choice").on("click", function () {
+              var computerPick = (Math.Floor(Math.random() * 4) + 1);
+              console.log($(this).attr("value")
 
               console.log("You clicked a button!!");
 

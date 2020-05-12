@@ -11,21 +11,22 @@ var people = [{ name: "Bob" }];
 var currentId = 0;
 
 function addPersonToList(event) {
-  event.preventDefault();
-  var name = nameEl.value;
-  var li = document.createElement("li");
-  li.id = people.length;
-  li.innerHTML = name + " <button>edit</button>";
-  people.push({ name: name });
-  peopleListEl.append(li);
+	event.preventDefault();
+	var name = nameEl.value;
+	var li = document.createElement("li");
+	li.id = people.length;
+	li.innerHTML = name + " <button>edit</button>";
+	people.push({ name: name });
+	peopleListEl.append(li);
 }
 
 function close() {
-  modalEl.style.display = "none";
+	modalEl.style.display = "none";
 }
 
 function handleClick() {
-  // Use event delegation to handle when the user clicks "edit"
+	getElement;
+	// Use event delegation to handle when the user clicks "edit"
 }
 
 closeEl.addEventListener("click", close);

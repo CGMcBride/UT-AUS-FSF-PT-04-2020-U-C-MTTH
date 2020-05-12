@@ -6,16 +6,16 @@ var count = localStorage.getItem("count");
 
 counter.textContent = count;
 
-addButton.addEventListener("click", function() {
-  count++;
-  counter.textContent = count;
+addButton.addEventListener("click", function () {
+	count++;
+	counter.textContent = count;
 
-  localStorage.setItem("count", count);
+	localStorage.setItem("count", count);
 });
 
-subtractButton.addEventListener("click", function() {
-  count--;
-  counter.textContent = count;
+subtractButton.addEventListener("click", function () {
+	count--;
+	counter.textContent = count;
 
-  localStorage.setItem("count", count);
+	localStorage.setItem("count", count);
 });

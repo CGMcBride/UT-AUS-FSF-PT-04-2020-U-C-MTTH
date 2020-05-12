@@ -8,31 +8,42 @@ var userPasswordSpan = document.querySelector("#user-password");
 renderLastRegistered();
 
 function displayMessage(type, message) {
-  msgDiv.textContent = message;
-  msgDiv.setAttribute("class", type);
+	msgDiv.textContent = message;
+	msgDiv.setAttribute("class", type);
 }
 
 function renderLastRegistered() {
-  // Fill in code here to retrieve the last email and password.
-  // If they are null, return early from this function
-  // Else set the text of the userEmailSpan and userPasswordSpan 
-  // to the corresponding values form local storgage
-  
+	// Fill in code here to retrieve the last email and password.
+	var email = localStorage.getItem("Email");
+	{
+		("#email");
+	}
+	var password = localStorage.getItem("password");
+	// If they are null, return early from this function
+	if (email && password === null) {
+		return;
+	}
+
+	// Else set the text of the userEmailSpan and userPasswordSpan
+	userEmailSpan.textContent = email;
+	userPasswordSpan.textContent = password;
+	// to the corresponding values form local storgage
 }
 
-signUpButton.addEventListener("click", function(event) {
-  event.preventDefault();
+signUpButton.addEventListener("click", function (event) {
+	event.preventDefault();
 
-  var email = document.querySelector("#email").value;
-  var password = document.querySelector("#password").value;
+	var email = document.querySelector("#email").value;
+	var password = document.querySelector("#password").value;
 
-  if (email === "") {
-    displayMessage("error", "Email cannot be blank");
-  } else if (password === "") {
-    displayMessage("error", "Password cannot be blank");
-  } else {
-    displayMessage("success", "Registered successfully");
+	if (email === "") {
+		displayMessage("error", "Email cannot be blank");
+	} else if (password === "") {
+		displayMessage("error", "Password cannot be blank");
+	} else {
+		displayMessage("success", "Registered successfully");
+		localStorage.setItem("email", email);
 
-  // Save email and password to localStorage and render the last registered.
-  }
+		// Save email and password to localStorage and render the last registered.
+	}
 });

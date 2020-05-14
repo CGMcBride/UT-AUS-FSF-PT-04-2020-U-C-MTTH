@@ -56,11 +56,11 @@
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
-    $(document).ready(function() {
+    $(document).ready(function () {
 
       // Here we are provided an initial array of letters.
       // Use this array to dynamically create buttons on the screen.
-      var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "_"];
+      let letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "_"];
 
 
       // MAJOR TASK #1: DYNAMICALLY CREATE BUTTONS
@@ -68,6 +68,15 @@
 
       // 1. Create a for-loop to iterate through the letters array.
 
+      for (i = 0; i < 25; i++) {
+        letters += i; $("letterBtn").addClass("letter-button letter-button-color")
+        $("letter-button").attr("data-letter", "letters[i]")
+
+        // $("letterBtn").each(function (letters) {
+        //   console.log(lettersBtn + ": " + $(this).text(letter - button[i]));
+        // })
+        // $('buttons').appendTo('#buttons')
+      }
       // Inside the loop...
 
       // 2. Create a variable named "letterBtn" equal to $("<button>");

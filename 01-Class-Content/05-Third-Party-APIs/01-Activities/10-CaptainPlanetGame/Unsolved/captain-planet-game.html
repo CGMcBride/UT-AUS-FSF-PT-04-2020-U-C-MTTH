@@ -49,6 +49,7 @@
                 <span class="fa fa-plus"></span> Grow</button>
               <button class="btn btn-danger btn-lg shrink-button">
                 <span class="fa fa-minus"></span> Shrink</button>
+
             </div>
           </div>
         </div>
@@ -66,122 +67,138 @@
           </div>
         </div>
 
-        <!-- Controls (Superpower Move Controls) -->
-        <div id="moveControls" class="card">
-          <h4 class="card-header">Move Controls</h4>
+        <!-- Controls (Superpower fire/water )-->
+        <div id="sizeControls" class="card">
+          <h4 class="card-header">Superpowers - Change Sizes!</h4>
           <div class="card-body">
-            <div class="text-center mb-1">
-              <button class="btn btn-dark btn-lg fa fa-arrow-up up-button">Up</button>
-            </div>
             <div class="text-center">
-              <button class="btn btn-dark btn-lg fa fa-arrow-left left-button">Left</button>
-              <button class="btn btn-dark btn-lg fa fa-arrow-down down-button">Down</button>
-              <button class="btn btn-dark btn-lg fa fa-arrow-right right-button">Right</button>
+              <button class="btn btn-dark btn-lg normal-button">
+                <span class="fa fa-ok"></span> Normal</button>
+              <button class="btn btn-primary btn-lg grow-button">
+                <span class="fa fa-plus"></span> Grow</button>
+              <button class="btn btn-danger btn-lg shrink-button">
+                <span class="fa fa-minus"></span> Shrink</button>
             </div>
-            <br>
-            <div class="text-center">
-              <button class="btn btn-dark btn-lg back-button">
-                <span class="fa fa-comment"></span> Go Planet!</button>
+
+            <!-- Controls (Superpower Move Controls) -->
+            <div id="moveControls" class="card">
+              <h4 class="card-header">Move Controls</h4>
+              <div class="card-body">
+                <div class="text-center mb-1">
+                  <button class="btn btn-dark btn-lg fa fa-arrow-up up-button">Up</button>
+                </div>
+                <div class="text-center">
+                  <button class="btn btn-dark btn-lg fa fa-arrow-left left-button">Left</button>
+                  <button class="btn btn-dark btn-lg fa fa-arrow-down down-button">Down</button>
+                  <button class="btn btn-dark btn-lg fa fa-arrow-right right-button">Right</button>
+                </div>
+                <br>
+                <div class="text-center">
+                  <button class="btn btn-dark btn-lg back-button">
+                    <span class="fa fa-comment"></span> Go Planet!</button>
+                </div>
+              </div>
             </div>
+          </div>
+
+
+          <!-- Right Card (Captain Planet Hero)-->
+          <div class="col-lg-6">
+
+            <!-- Captain Planet Image -->
+            <img src="assets/captain-planet.jpg" alt="" class="img captain-planet"
+              style="position:absolute; top:50px; left: 80px; z-index: -20; height: 300px">
           </div>
         </div>
       </div>
 
-      <!-- Right Card (Captain Planet Hero)-->
-      <div class="col-lg-6">
+      <script>
 
-        <!-- Captain Planet Image -->
-        <img src="assets/captain-planet.jpg" alt="" class="img captain-planet" style="position:absolute; top:50px; left: 80px; z-index: -20; height: 300px">
-      </div>
-    </div>
-  </div>
+        // JavaScript function that wraps everything
+        $(document).ready(function () {
 
-  <script>
+          var captainPlanet = $(".captain-planet");
 
-  // JavaScript function that wraps everything
-  $(document).ready(function() {
+          // Gets Link for Theme Song
+          var audioElement = document.createElement("audio");
+          audioElement.setAttribute("src", "assets/captainplanet24.mp3");
 
-    var captainPlanet = $(".captain-planet");
+          // Theme Button
+          $(".theme-button").on("click", function () {
+            audioElement.play();
+          });
+          $(".pause-button").on("click", function () {
+            audioElement.pause();
+          });
 
-    // Gets Link for Theme Song
-    var audioElement = document.createElement("audio");
-    audioElement.setAttribute("src", "assets/captainplanet24.mp3");
+          // Size Buttons
+          $(".normal-button").on("click", function () {
+            captainPlanet.animate({ height: "300px" });
+          });
+          $(".grow-button").on("click", function () {
+            captainPlanet.animate({ height: "500px" });
+          });
+          $(".shrink-button").on("click", function () {
+            captainPlanet.animate({ height: "100px" });
+          });
 
-    // Theme Button
-    $(".theme-button").on("click", function() {
-      audioElement.play();
-    });
-    $(".pause-button").on("click", function() {
-      audioElement.pause();
-    });
+          // Visibility Buttons
+          $(".vis-button").on("click", function () {
+            captainPlanet.animate({ opacity: "1" });
+          });
+          $(".invis-button").on("click", function () {
+            captainPlanet.animate({ opacity: "0.05" });
+          });
 
-    // Size Buttons
-    $(".normal-button").on("click", function() {
-      captainPlanet.animate({ height: "300px" });
-    });
-    $(".grow-button").on("click", function() {
-      captainPlanet.animate({ height: "500px" });
-    });
-    $(".shrink-button").on("click", function() {
-      captainPlanet.animate({ height: "100px" });
-    });
+          // Move Buttons
+          $(".up-button").on("click", function () {
+            captainPlanet.animate({ top: "-=200px" }, "normal");
+          });
+          $(".down-button").on("click", function () {
+            captainPlanet.animate({ top: "+=200px" }, "normal");
+          });
+          $(".left-button").on("click", function () {
+            captainPlanet.animate({ left: "-=200px" }, "normal");
+          });
+          $(".right-button").on("click", function () {
+            captainPlanet.animate({ left: "+=200px" }, "normal");
+          });
+          $(".back-button").on("click", function () {
+            captainPlanet.animate({ top: "50px", left: "80px" }, "fast");
+          });
 
-    // Visibility Buttons
-    $(".vis-button").on("click", function() {
-      captainPlanet.animate({ opacity: "1" });
-    });
-    $(".invis-button").on("click", function() {
-      captainPlanet.animate({ opacity: "0.05" });
-    });
+          // Keyboard move controls
+          $(document).keyup(function (e) {
+            switch (e.which) {
 
-    // Move Buttons
-    $(".up-button").on("click", function() {
-      captainPlanet.animate({ top: "-=200px" }, "normal");
-    });
-    $(".down-button").on("click", function() {
-      captainPlanet.animate({ top: "+=200px" }, "normal");
-    });
-    $(".left-button").on("click", function() {
-      captainPlanet.animate({ left: "-=200px" }, "normal");
-    });
-    $(".right-button").on("click", function() {
-      captainPlanet.animate({ left: "+=200px" }, "normal");
-    });
-    $(".back-button").on("click", function() {
-      captainPlanet.animate({ top: "50px", left: "80px" }, "fast");
-    });
+              // Move Buttons (Keyboard Down)
+              case 40:
+                captainPlanet.animate({ top: "+=200px" }, "normal");
+                break;
 
-    // Keyboard move controls
-    $(document).keyup(function(e) {
-      switch (e.which) {
+              // Move Buttons (Keyboard Right)
+              case 39:
+                captainPlanet.animate({ left: "+=200px" }, "normal");
+                break;
 
-      // Move Buttons (Keyboard Down)
-      case 40:
-        captainPlanet.animate({ top: "+=200px" }, "normal");
-        break;
+              // Move Buttons (Keyboard Up)
+              case 38:
+                captainPlanet.animate({ top: "-=200px" }, "normal");
+                break;
 
-        // Move Buttons (Keyboard Right)
-      case 39:
-        captainPlanet.animate({ left: "+=200px" }, "normal");
-        break;
+              // Move Buttons (Keyboard Left)
+              case 37:
+                captainPlanet.animate({ left: "-=200px" }, "normal");
+                break;
 
-        // Move Buttons (Keyboard Up)
-      case 38:
-        captainPlanet.animate({ top: "-=200px" }, "normal");
-        break;
+              default:
+                break;
+            }
+          });
+        });
 
-        // Move Buttons (Keyboard Left)
-      case 37:
-        captainPlanet.animate({ left: "-=200px" }, "normal");
-        break;
-
-      default:
-        break;
-      }
-    });
-  });
-
-  </script>
+      </script>
 
 </body>
+
 </html>

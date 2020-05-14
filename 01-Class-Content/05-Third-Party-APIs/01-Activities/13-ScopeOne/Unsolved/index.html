@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Scope Activity #1</title>
 </head>
+
 <body>
   <h1>Scope Activity #1</h1>
   <h2>✨Open the console to see the magic!✨</h2>
@@ -11,12 +13,13 @@
   <script>
 
     function outside() {
+      // local/lexical - bound to the parent  or goloabl
       // what is the scope of this variable?
       var x = 1;
 
       // what is the scope of this function and the scope of y?
       function inside(y) {
-
+        // local function not outside the global 
         console.log(x + y);
       }
 
@@ -24,16 +27,20 @@
     }
 
     // what is happening here?
+    // global bc its the outside function that is hoisting to the parent funtion on line 13
     var insideOut = outside();
 
     // What does this return?
+    // local bc not outside the function
     insideOut(2);
 
     // Uncaught ReferenceError: x is not defined.
     // How does insideOut have access to x?
+    // bc we have the var insideout equal the outside function
     console.log("The value of 'x' outside 'outside()' is: " + x);
 
   </script>
 
 </body>
+
 </html>

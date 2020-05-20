@@ -14,17 +14,19 @@
   <div class="temp"></div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
+    let city = prompt("choose your city")
+    let state = prompt(" what state are you in?")
     // This is our API key. Add your own API key between the ""
-    var APIKey = "";
+    var APIKey = "7dffaaaa76fa3a3d1c006f86a1fd66bc";
 
     // Here we are building the URL we need to query the database
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=Bujumbura,Burundi&appid=" + APIKey;
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=Texas&appid=" + APIKey;
 
     // We then created an AJAX call
     $.ajax({
       url: queryURL,
       method: "GET"
-    }).then(function(response) {
+    }).then(function (response) {
 
       // Create CODE HERE to Log the queryURL
       // Create CODE HERE to log the resulting object

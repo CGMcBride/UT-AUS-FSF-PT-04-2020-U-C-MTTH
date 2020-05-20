@@ -26,7 +26,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
       // This .on("click") function will trigger the AJAX Call
-      $("#find-movie").on("click", function(event) {
+      $("#find-movie").on("click", function (event) {
 
         // Preventing the submit button from trying to submit the form
         // We're optionally using a form so the user may hit Enter to search instead of clicking the button
@@ -42,7 +42,15 @@
         // and display it in the div with an id of movie-view
 
         // YOUR CODE GOES IN THESE DASHES. DO NOT MANUALLY EDIT THE HTML ABOVE
+        $.ajax({
+          url: queryURL,
+          method: "GET"
 
+        }).then(function (response) {
+          console.log(response);
+          $("#movie-view").text(response.Title);
+
+        })
         // =================================================================
 
         // CODE GOES HERE

@@ -2,8 +2,10 @@
 var dog = {
   name: "Lassie",
   sound: "Woof!",
-  makeSound: () => console.log(this.sound),
-  readTag: () => console.log("The dog's tag reads: " + this.name + ".")
+  makeSound: () => {
+    console.log("My name is Blue marvel");
+  },
+  readTag: () => console.log("The dog's tag reads: " + this.name + "."),
 };
 
 // Prints `undefined`
@@ -15,3 +17,4 @@ dog.readTag();
 // In the makeSound and readTag methods, `this` doesn't refer to `dog`
 // If this code run in node, `this` refers to `module.exports` (the object containing all the exports in this file)
 // If this code was run in the browser, `this` would refer to the window
+module.exports = { name: "blue marvel!" };

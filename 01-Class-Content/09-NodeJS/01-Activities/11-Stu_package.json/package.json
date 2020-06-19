@@ -13,6 +13,7 @@
   "author": "You!",
   "license": "ISC",
   "dependencies": {
+    "async": "^3.2.0",
     "inquirer": "^6.5.0"
   }
 }

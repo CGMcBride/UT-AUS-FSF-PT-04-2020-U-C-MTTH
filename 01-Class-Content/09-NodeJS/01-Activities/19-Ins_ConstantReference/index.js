@@ -1,13 +1,12 @@
 // 1. const can be used for values which we will not reassign
 
-const age = 25;
+let age = 25;
 
 age++; // TypeError: Assignment to constant variable.
-
+age = age + 1;
 // ==========================================================================
 
 // const name = "";
-
 
 // name = "Cherie"; // TypeError: Assignment to constant variable.
 
@@ -16,9 +15,10 @@ age++; // TypeError: Assignment to constant variable.
 // 2. const doesn't mean `constant value`, instead means `constant reference`
 
 // Unlike primitive data types, objects and arrays are passed by reference, rather than passed by value
-// const beatles = ["John", "Paul", "Ringo"];
-// beatles.push("George");
-
+const beatles = ["John", "Paul", "Ringo"];
+beatles.push("George");
+console.log(beatles);
+beatles = [];
 // This works because by updating an array's contents, we aren't changing the reference to the underlying array
 // console.log(beatles); // Prints `["John", "Paul", "Ringo", "George"]`
 

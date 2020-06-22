@@ -1,16 +1,15 @@
 // 1. When using var, our counter exists after a for-loop is done
 
-for (var i = 0; i < 5; i++) {
+for (i = 0; i < 5; i++) {
   console.log(i);
 }
 
 console.log(i); // Prints 5
 
-
 // When using let, our counter is not defined outside of the for-loop block
 
 let x = 42;
-
+let j;
 for (let j = 0; j < 5; j++) {
   console.log(j);
   console.log(x);

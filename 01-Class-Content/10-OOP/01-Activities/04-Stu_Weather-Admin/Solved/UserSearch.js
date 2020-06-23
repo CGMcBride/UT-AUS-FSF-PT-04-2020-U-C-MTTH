@@ -1,14 +1,14 @@
 // We're incorporating an npm package for doing weather searches.
-var weather = require("weather-js");
+const weather = require("weather-js");
 
 // Creates a UserSearch Constructor
-var UserSearch = function (name, location) {
+const UserSearch = function(name, location) {
   this.name = name;
   this.location = location;
-  this.date = Date.Now();
+  this.date = Date.now();
 
-  this.getWeather = function () {
-    weather.search({ search: this.location, degreeType: "F" }, function (err, result) {
+  this.getWeather = function() {
+    weather.find({ search: this.location, degreeType: "F" }, function(err, result) {
       if (err) {
         console.log(err);
       }
@@ -16,7 +16,5 @@ var UserSearch = function (name, location) {
     });
   };
 };
-
-
 
 module.exports = UserSearch;

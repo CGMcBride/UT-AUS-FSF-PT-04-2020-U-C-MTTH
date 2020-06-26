@@ -6,6 +6,7 @@ describe("Arithmetic", () => {
       const obj = new Arithmetic();
 
       expect("number" in obj).toEqual(true);
+      // expect(true).toEqual(false);
     });
 
     it("should set 'number' when created", () => {

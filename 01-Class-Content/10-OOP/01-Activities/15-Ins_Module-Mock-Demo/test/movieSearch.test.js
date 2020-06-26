@@ -21,12 +21,14 @@ describe("MovieSearch", () => {
       const name = "Rocky";
 
       axios.get.mockReturnValue(
-        new Promise(function(resolve) {
-          resolve({ data: {} });
+        new Promise(function (resolve) {
+          resolve({ data: { yearReleased: "2003" } });
         })
       );
 
-      expect(movie.search(name)).resolves.toEqual({ data: {} });
+      expect(movie.search(name)).resolves.toEqual({
+        data: { yearReleased: "2003" },
+      });
       expect(axios.get).lastCalledWith(movie.buildUrl(name));
     });
   });

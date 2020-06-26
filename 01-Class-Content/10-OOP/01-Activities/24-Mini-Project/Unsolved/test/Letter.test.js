@@ -25,3 +25,5 @@ describe("Letter class", () => {
     });
   });
 });
+
+module.export = Letter

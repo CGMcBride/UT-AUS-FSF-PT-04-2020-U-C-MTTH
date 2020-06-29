@@ -5,7 +5,7 @@ const dogs = {
   // Creates the property "noise" and sets it to "Woof!"
   noise: "Woof!",
   // Creates the method "makeNoise", which when called, prints dogs.noise if .raining is true
-  makeNoise: () => {
+  makeNoise: function () {
     // The 'this' keyword refers to the object it's called from
     // i.e. this.raining refers to the raining property of 'this' particular object
     if (this.raining === true) {

@@ -22,11 +22,21 @@ describe("MovieSearch", () => {
 
       axios.get.mockReturnValue(
         new Promise(function (resolve) {
+<<<<<<< HEAD
           resolve({ data: { yearRelease: "2003" } });
         })
       );
 
       expect(movie.search(name)).resolves.toEqual({ data: { yearReleased: "2003" } });
+=======
+          resolve({ data: { yearReleased: "2003" } });
+        })
+      );
+
+      expect(movie.search(name)).resolves.toEqual({
+        data: { yearReleased: "2003" },
+      });
+>>>>>>> 7fc1acf8cb77c8638fa3bfb257eb78540fbfc74c
       expect(axios.get).lastCalledWith(movie.buildUrl(name));
     });
   });

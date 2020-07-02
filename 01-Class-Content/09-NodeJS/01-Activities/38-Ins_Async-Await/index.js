@@ -1,39 +1,19 @@
 const axios = require("axios");
-const inquirer = require("inquirer");
 
-getMovie();
-
-async function getMovie() {
+async function getMovie(movie) {
   try {
-    const { movie } = await inquirer.prompt({
-      message: "Search a movie:",
-      name: "movie",
-    });
+    // const movie = "batman";
 
     const { data } = await axios.get(
       `https://www.omdbapi.com/?t=${movie}&apikey=trilogy`
     );
 
-    console.log(data);
+    return data.Title;
   } catch (err) {
-    console.log(err);
+    // console.log(err);
+    return err;
   }
 }
 
-// async function getMovie() {
-async () => {
-  try {
-    const { movie } = await inquirer.prompt({
-      message: "Search a movie:",
-      name: "movie",
-    });
-
-    const { data } = await axios.get(
-      `https://www.omdbapi.com/?t=${movie}&apikey=trilogy`
-    );
-
-    console.log(data);
-  } catch (err) {
-    console.log(err);
-  }
-};
+getMovie("Batman");
+module.exports = { getMovie };

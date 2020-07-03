@@ -11,14 +11,14 @@ var yoda = {
   name: "Yoda",
   role: "Jedi Master",
   age: 900,
-  forcePoints: 2000
+  forcePoints: 2000,
 };
 
 var darthmaul = {
   name: "Darth Maul",
   role: "Sith Lord",
   age: 200,
-  forcePoints: 1200
+  forcePoints: 1200,
 };
 
 var obiwankenobi = {
@@ -37,7 +37,12 @@ var obiwankenobi = {
 
 // Routes
 // ===========================================================
+<<<<<<< HEAD
 app.get("/", function (req, res) {
+=======
+app.get("/", (req, res) => {
+  console.log("Yep! You hit the ROOT route.");
+>>>>>>> 77788e67169e7a3738e393aee0b036d35a295afe
   res.send("Welcome to the Star Wars Page!");
 });
 

@@ -3,7 +3,8 @@
 var express = require("express");
 
 var app = express();
-var PORT = 3000;
+var PORT = process.env.PORT || 8080;
+
 
 // Data
 // ===========================================================
@@ -30,17 +31,17 @@ var characters = [{
 // Routes
 // ===========================================================
 
-app.get("/", function(req, res) {
+app.get("/", function (req, res) {
   res.send("Welcome to the Star Wars Page!");
 });
 
 // What does this route do?
-app.get("/api/characters", function(req, res) {
+app.get("/api/characters", function (req, res) {
   return res.json(characters);
 });
 
 // What does this route do?
-app.get("/api/characters/:character", function(req, res) {
+app.get("/api/characters/:character", function (req, res) {
   // What does this code do?
   var chosen = req.params.character;
   console.log(chosen);
@@ -58,6 +59,6 @@ app.get("/api/characters/:character", function(req, res) {
 
 // Listener
 // ===========================================================
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log("App listening on PORT " + PORT);
 });

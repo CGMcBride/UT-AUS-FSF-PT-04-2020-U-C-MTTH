@@ -7,7 +7,8 @@ CREATE DATABASE animals_db;
 USE animals_db;
 
 -- Creates the table "people" within animals_db --
-CREATE TABLE people (
+CREATE TABLE people
+(
   -- Makes a string column called "name" which cannot contain null --
   name VARCHAR(30) NOT NULL,
   -- Makes a boolean column called "has_pet" which cannot contain null --
@@ -19,17 +20,25 @@ CREATE TABLE people (
 );
 
 -- Creates new rows containing data in all named columns --
-INSERT INTO people (name, has_pet, pet_name, pet_age)
-VALUES ("Ahmed", TRUE, "Rockington", 100);
+INSERT INTO people
+  (name, has_pet, pet_name, pet_age)
+VALUES
+  ("Ahmed", TRUE, "Rockington", 100);
 
-INSERT INTO people (name, has_pet, pet_name, pet_age)
-VALUES ("Ahmed", TRUE, "Rockington", 100);
+INSERT INTO people
+  (name, has_pet, pet_name, pet_age)
+VALUES
+  ("Ahmed", TRUE, "Rockington", 100);
 
-INSERT INTO people (name, has_pet, pet_name, pet_age)
-VALUES ("Jacob", TRUE, "Misty", 10);
+INSERT INTO people
+  (name, has_pet, pet_name, pet_age)
+VALUES
+  ("Jacob", TRUE, "Misty", 10);
 
-INSERT INTO people (name, has_pet)
-VALUES ("Peter", false);
+INSERT INTO people
+  (name, has_pet)
+VALUES
+  ("Peter", false);
 
 -- Updates the row where the column name is peter --
 UPDATE people

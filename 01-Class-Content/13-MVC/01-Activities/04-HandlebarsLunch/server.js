@@ -1,6 +1,6 @@
 // Dependencies
 var express = require("express");
-var exphbs = require("express-handlebars");
+var exphbs = require("express-handlebars"); // this is a package to help us configure a template engine
 
 // Create an instance of the express app.
 var app = express();
@@ -23,15 +23,15 @@ var lunches = [
 ];
 
 // Routes
-app.get("/weekday", function(req, res) {
-  res.render("index", lunches[0]);
+app.get("/weekday", function (req, res) {
+  res.render("index", lunches[0]); // go find index template to get the data
 });
 
-app.get("/weekend", function(req, res) {
+app.get("/weekend", function (req, res) {
   res.render("index", lunches[1]);
 });
 
-app.get("/lunches", function(req, res) {
+app.get("/lunches", function (req, res) {
   res.render("all-lunches", {
     foods: lunches,
     eater: "david"
@@ -39,7 +39,7 @@ app.get("/lunches", function(req, res) {
 });
 
 // Start our server so that it can begin listening to client requests.
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   // Log (server-side) when our server has started
   console.log("Server listening on: http://localhost:" + PORT);
 });

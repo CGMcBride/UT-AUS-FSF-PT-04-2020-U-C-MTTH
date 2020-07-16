@@ -9,48 +9,60 @@ var connection = require("./connection.js");
 // ORM
 // =============================================================
 
-var tableName = "allcharacters";
+var tableName = "todos";
 
 var orm = {
+
   // Here our ORM is creating a simple method for performing a query of the entire table.
   // We make use of the callback to ensure that data is returned only once the query is done.
-  allCharacters: function(callback) {
+  getTodos: function(callback) {
     var s = "SELECT * FROM " + tableName;
 
     connection.query(s, function(err, result) {
+
       callback(result);
+
     });
   },
 
   // Here our ORM is creating a simple method for performing a query of a single character in the table.
   // Again, we make use of the callback to grab a specific character from the database.
-  searchCharacter: function(name, callback) {
-    var s = "select * from " + tableName + " where routeName=?";
 
-    connection.query(s, [name], function(err, result) {
+  deleteTodo: function(id, callback) {
+
+    var s = "DELETE FROM " + tableName + " WHERE id=?";
+
+    connection.query(s, [id], function(err, result) {
+
       callback(result);
+    });
+
+  },
+
+  addTodo: function(todo, callback) {
+    var s = "INSERT INTO " + tableName + " (text, complete) VALUES (?,?)";
+    todo.complete = todo.complete || 0;
+    connection.query(s, [
+      todo.text, todo.complete
+    ], function(err, result) {
+
+      callback(result);
+
     });
   },
 
-  // Here our ORM is creating a simple method for adding characters to the database
-  // Effectively, the ORM's simple addCharacter method translates into a more complex SQL INSERT statement.
-  addCharacter: function(character, callback) {
-    // Creating a routeName so its easy to search.
+  editTodo: function(todo, callback) {
+    var s = "UPDATE " + tableName + " SET text=? WHERE id=?";
 
-    // Using a RegEx Pattern to remove spaces from character.name
-    // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-    var routeName = character.name.replace(/\s+/g, "").toLowerCase();
-    console.log(routeName);
+    connection.query(s, [
+      todo.text, todo.id
+    ], function(err, result) {
 
-    var s = "INSERT INTO " + tableName + " (routeName, name, role, age, forcePoints) VALUES (?,?,?,?,?)";
-
-    connection.query(s, [routeName, character.name, character.role, character.age, character.forcePoints], function(
-      err,
-      result
-    ) {
       callback(result);
+
     });
   }
+
 };
 
 module.exports = orm;

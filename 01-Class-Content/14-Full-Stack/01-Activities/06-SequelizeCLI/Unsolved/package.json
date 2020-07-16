@@ -6,8 +6,13 @@
   "dependencies": {
     "express": "^4.16.3",
     "sequelize": "^6.3.3"
+<<<<<<< HEAD
+=======
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "sequelize-cli": "^6.2.0"
+>>>>>>> ebdfd199dbe82ac00d5a6c206ffc1fedf649f3f7
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"

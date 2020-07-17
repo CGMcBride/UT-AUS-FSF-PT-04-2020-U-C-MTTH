@@ -2,7 +2,7 @@
 // CONNECTION.JS - THIS FILE INITIATES THE CONNECTION TO MYSQL
 // *********************************************************************************
 
-var mysql = require("mysql");
+var mysql = require("./node_modules/mysql");
 
 // we placed the connections in this source object
 var source = {
@@ -11,7 +11,7 @@ var source = {
     host: "localhost",
     port: 3306,
     user: "root",
-    password: "",
+    password: "password",
     database: "todolist"
   },
 
@@ -28,7 +28,7 @@ var source = {
 // we use source.[name of connection] to hook into mysql
 var connection = mysql.createConnection(source.localhost);
 
-connection.connect(function(err) {
+connection.connect(function (err) {
   if (err) {
     console.error("error connecting: " + err.stack);
     return;

@@ -12,7 +12,11 @@ var source = {
     port: 3306,
     user: "root",
     password: "password",
+<<<<<<< HEAD:01-Class-Content/14-Full-Stack/01-Activities/07-ORM-To-Sequelize/Unsolved/config_BREAK/connection.js
     database: "todolist"
+=======
+    database: "todolist",
+>>>>>>> 4debc7ab0a680230e01ce9ae80dd64bd1b11773c:01-Class-Content/14-Full-Stack/01-Activities/07-ORM-To-Sequelize/Unsolved/config/connection.js
   },
 
   // jawsDB
@@ -21,8 +25,8 @@ var source = {
     port: 3306,
     user: "<name of user>",
     password: "<password>",
-    database: "<name of database>"
-  }
+    database: "<name of database>",
+  },
 };
 
 // we use source.[name of connection] to hook into mysql

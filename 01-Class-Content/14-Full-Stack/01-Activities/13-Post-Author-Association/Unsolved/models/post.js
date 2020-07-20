@@ -3,7 +3,7 @@ module.exports = function(sequelize, DataTypes) {
     title: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
+      validate: { 
         len: [1]
       }
     },
@@ -13,7 +13,13 @@ module.exports = function(sequelize, DataTypes) {
       len: [1]
     }
   });
-
+  post.associate = function (models){
+    models.post.belongsTo(models.Author,{
+      foreignKey {
+        
+      }
+    })
+  }
   // Add a belongsTo association to Authors here
   // Example: https://github.com/sequelize/express-example/blob/master/models/task.js
   return Post;

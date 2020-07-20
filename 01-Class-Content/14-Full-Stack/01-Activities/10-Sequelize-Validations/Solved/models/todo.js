@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   var Todo = sequelize.define("Todo", {
     text: {
       type: DataTypes.STRING,
@@ -7,15 +7,15 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       // len is a validation that checks that our todo is between 1 and 140 characters
       validate: {
-        len: [1, 140]
-      }
+        len: [1, 4],
+      },
     },
     complete: {
       type: DataTypes.BOOLEAN,
       // defaultValue is a flag that defaults a new todos complete value to false if
       // it isn't supplied one
-      defaultValue: false
-    }
+      defaultValue: false,
+    },
   });
   return Todo;
 };

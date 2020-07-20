@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
+<<<<<<< HEAD
     "express": "^4.16.3",
     "sequelize": "^6.3.3"
 <<<<<<< HEAD
@@ -12,7 +13,11 @@
   "devDependencies": {
     "sequelize-cli": "^6.2.0"
 >>>>>>> ebdfd199dbe82ac00d5a6c206ffc1fedf649f3f7
+=======
+    "express": "^4.16.3"
+>>>>>>> fc971962f8e73c53ad9ba90f6b090211ac87e69b
   },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"

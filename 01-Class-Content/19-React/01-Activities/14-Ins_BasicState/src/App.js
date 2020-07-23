@@ -1,8 +1,14 @@
 import React from "react";
-import Counter from "./components/Counter";
-
+import CounterHooks from "./components/CounterHooks";
+import CounterClass from "./components/CounterClass";
 function App() {
-  return <Counter />;
+  return (
+    <div>
+      <CounterClass />
+      <h1>Using class (old) structure below</h1>
+      <CounterHooks />
+    </div>
+  );
 }
 
 export default App;

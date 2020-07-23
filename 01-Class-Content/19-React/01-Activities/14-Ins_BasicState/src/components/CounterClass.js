@@ -4,7 +4,7 @@ import React from "react";
 class Counter extends React.Component {
   // Setting the initial state of the Counter component
   state = {
-    count: 0
+    count: 0,
   };
 
   // handleIncrement increments this.state.count by 1
@@ -17,9 +17,7 @@ class Counter extends React.Component {
   render() {
     return (
       <div className="card text-center">
-        <div className="card-header bg-primary text-white">
-          Click Counter!
-        </div>
+        <div className="card-header bg-primary text-white">Click Counter!</div>
         <div className="card-body">
           <p className="card-text">Click Count: {this.state.count}</p>
           <button className="btn btn-primary" onClick={this.handleIncrement}>

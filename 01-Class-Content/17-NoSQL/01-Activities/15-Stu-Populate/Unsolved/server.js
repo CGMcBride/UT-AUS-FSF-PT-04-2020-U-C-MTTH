@@ -25,6 +25,8 @@ db.User.create({ name: "Ernest Hemingway" })
     console.log(message);
   });
 
+db.Note.create({ title: "Sai's test", body: 'saigone!' })
+
 app.get("/notes", (req, res) => {
   db.Note.find({})
     .then(dbNote => {
@@ -62,6 +64,16 @@ app.get("/populateduser", (req, res) => {
   // Write the query to grab the documents from the User collection,
   // and populate them with any associated Notes.
   // TIP: Check the models out to see how the Notes refers to the User
+
+
+  db.Notes.find({})
+    .populate("notes")
+    .then(dbNotes => {
+      res.json(dbNotes);
+    })
+    .catch(err => {
+      res.json(err);
+    })
 });
 
 // Start the server

@@ -10,7 +10,7 @@ const ExampleSchema = new Schema({
 
   number: {
     type: Number,
-    unique: true,
+    unique: true, // find out how
     required: true
   },
 

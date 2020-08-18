@@ -34,17 +34,21 @@ app.post("/submit", ({ body }, res) => {
   // Save the request body as an object called book
   const book = body;
 
+  book.read = false;
+
+  db.books.save(err, save) => {
+    if (err) { conslo }
+  }
   // If we want the object to have a boolean value of false,
   // we have to do it here, because the ajax post will convert it
   // to a string instead of a boolean
-  book.read = false;
 });
 
 // Find all books marked as read
-app.get("/read", (req, res) => {});
+app.get("/read", (req, res) => { });
 
 // Find all books marked as unread
-app.get("/unread", (req, res) => {});
+app.get("/unread", (req, res) => { });
 
 // Mark a book as having been read
 app.put("/markread/:id", (req, res) => {
